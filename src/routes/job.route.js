@@ -14,7 +14,7 @@
  const router = express.Router();
  
 //route to add job
-router.post('/job',userAuth,/* Validator.jobValidator  */ jobController.newJob);
+router.post('/job',userAuth,Validator.jobValidator ,jobController.newJob);
  
 //route to getjob
 router.get('/job',userAuth,jobController.getJobs);

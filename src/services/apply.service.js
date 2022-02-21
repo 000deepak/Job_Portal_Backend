@@ -10,21 +10,14 @@ export const apply = async (req) => {
     data: ''
   };
 
-  // console.log(req)
-  console.log(req.params.jobId, 'param jobId');
-  console.log(req.body.data.candidateId, 'candidateId');
-
   /* 1.check for Job availibilty */
   let checkJob = await Job.findOne({ _id: req.params.jobId });
-
-  console.log(checkJob.recruiterId, 'recruiterId');
 
   if (checkJob) {
     let checkJobCart = await JobCart.findOne({
       jobId: req.params.jobId
     });
 
-    console.log(checkJobCart, 'checkJobCart');
 
     if (!checkJobCart) {
       //create cart for jobId & add candidate
@@ -67,14 +60,14 @@ export const apply = async (req) => {
         await checkJobCart.save();
 
         response.status = 200;
-        response.success = false;
+        response.success = true;
         response.message = 'Applied To Job';
         response.data = ' ';
         return response;
       } else {
         //if candidate  present in that jobcart it has already applied
 
-        response.status = 200;
+        response.status = 409;
         response.success = false;
         response.message = 'Already Applied to job';
         response.data = ' ';

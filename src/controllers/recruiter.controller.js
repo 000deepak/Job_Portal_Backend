@@ -3,7 +3,7 @@
  * @module       controller
  * @file         recruiter.controller.js
  * @author       deepak
- * @since        9/1/2022
+ * @since        19/2/2022
  */
 
 import * as recruiterService from '../services/recruiter.service.js';
@@ -69,7 +69,7 @@ export const resetPassword = async (req, res, next) => {
 };
 
 /**
- * Controller to get password
+ * Controller to get Candidates
  * @param  {object} req - request object
  * @param {object} res - response object
  * @param {Function} next
@@ -84,7 +84,7 @@ export const getCandidates = async (req, res, next) => {
 };
 
 /**
- * Controller to post jobs
+ * Controller to get posted jobs
  * @param  {object} req - request object
  * @param {object} res - response object
  * @param {Function} next

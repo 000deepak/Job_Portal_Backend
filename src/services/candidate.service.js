@@ -3,7 +3,7 @@
  * @module       service
  * @file         Candidate.service.js
  * @author       deepak
- * @since        9/1/2022
+ * @since        19/2/2022
  */
 
 import Candidate from '../models/candidate.model';
@@ -58,7 +58,6 @@ export const loginCandidate = async (body) => {
   let email = { email: body.email };
 
   let foundCandidate = await Candidate.findOne(email);
-  console.log(foundCandidate);
 
   if (foundCandidate) {
     let match = await bcrypt.compare(body.password, foundCandidate.password);
@@ -98,7 +97,7 @@ export const loginCandidate = async (body) => {
   }
 };
 
-//create add Candidate details
+//add Candidate details
 export const candidateDetails = async (req) => {
   console.log(req.body.data.candidateId);
 
@@ -141,7 +140,6 @@ export const candidateDetails = async (req) => {
 
 //get jobs
 export const getCandidateDetails = async (req) => {
-  console.log(req.body.data.candidateId);
   const data = await CandidateDetails.find({
     candidateId: req.body.data.candidateId
   });

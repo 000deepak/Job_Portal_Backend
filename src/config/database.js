@@ -3,7 +3,7 @@
  * @module       config
  * @file         database.js
  * @author       deepak 
- * @since        9/1/2022
+ * @since        19/2/2022
  */
 
 import mongoose from 'mongoose';

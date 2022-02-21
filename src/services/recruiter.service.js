@@ -3,10 +3,10 @@
  * @module       service
  * @file         Recruiter.service.js
  * @author       deepak
- * @since        9/1/2022
+ * @since        19/2/2022
  */
 
-// import Recruiter from '../models/Recruiter.model.js';
+
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import * as sendEmail from '../middlewares/nodemailer.middleware.js';
@@ -164,7 +164,7 @@ export const resetPassword = async (body) => {
 
     return response;
   } else {
-    response.status = 200;
+    response.status = 404;
     response.success = false;
     response.message = 'Recruiter Not Found';
     response.data = body;
@@ -216,7 +216,7 @@ export const getPostedJobs = async (req) => {
     response.message = 'All Posted Jobs Fectched';
     response.data = data;
   } else {
-    response.status = 200;
+    response.status = 404;
     response.success = false;
     response.message = 'Jobs Not Found';
     response.data = data;

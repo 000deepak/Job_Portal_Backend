@@ -20,12 +20,12 @@ router.post('/register', Validator.signupValidator, candidateController.newCandi
 router.post('/login', Validator.signinValidator, candidateController.loginCandidate);
 
 //route to create add candidate details
-router.post('/detail', userAuth,candidateController.candidateDetails);
+router.post('/detail', userAuth,Validator.canValidator,candidateController.candidateDetails);
  
-//route to create a new candidate
+//route to get candidate details
 router.get('/detail', userAuth,candidateController.getCandidateDetails);
  
-//route to login candidate
+//route to apply candidate
 router.post('/apply/:jobId',userAuth, candidateController.apply);
  
   

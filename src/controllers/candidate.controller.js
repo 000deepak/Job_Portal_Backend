@@ -26,7 +26,7 @@ export const newCandidate = async (req, res, next) => {
 };
 
 /**
- * Controller to loginCandidate
+ * Controller to login Candidate
  * @param  {object} req - request object
  * @param {object} res - response object
  * @param {Function} next
@@ -56,7 +56,7 @@ export const candidateDetails = async (req, res, next) => {
 };
 
 /**
- * Controller to get candidate
+ * Controller to get candidate details
  * @param  {object} req - request object
  * @param {object} res - response object
  * @param {Function} next

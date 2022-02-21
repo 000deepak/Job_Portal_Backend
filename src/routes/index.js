@@ -19,7 +19,7 @@ import jobRoute from './job.route';
  */
 const routes = () => {
   router.get('/', (req, res) => {
-    res.json('Welcome to candidate payroll application');
+    res.json('Welcome to jop portal application');
   });
   router.use('/recruiter', recruiterRoute);
   router.use('/candidate', candidateRoute);
